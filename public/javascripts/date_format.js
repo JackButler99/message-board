@@ -1,4 +1,4 @@
-function date_format(date) {
+const date_format=(date) =>{
 
   var seconds = Math.floor((new Date() - date) / 1000);
 
