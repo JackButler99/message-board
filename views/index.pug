@@ -1,5 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  header 
+    h1= 'Message Board'
+  main
+    each message in messages 
+      section.message-card 
+        h2= message.text
+        p.user= message.user
+        p.added= message.added
+    .button
+      a(href=`http://localhost:${process.env.PORT || 3000}/new`): button.newMessage= "Post a Message"
